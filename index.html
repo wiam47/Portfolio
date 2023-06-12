@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+    <title>My Portfolio</title>
+    <style>
+        html {
+  scroll-behavior: smooth;
+}
+        .primaryColor {
+            color: #40513B;
+        }
+        .tab-hovered {
+            border: 1px solid transparent;
+        }
+        .tab-hovered:hover {
+            border-color: #40513B;
+        }
+
+        .aboutme-img-border {
+            border: 6px solid #40513B;
+            position: absolute;
+            height: 100%;
+            width: 288px;
+            z-index: -1;
+            top: -25px;
+            right: 110px;
+        }
+
+        #certifs {
+            scrollbar-color: #d5ac68 #f1db9d;
+            scrollbar-width: thin;
+            -ms-overflow-style: none;
+        }
+        #certifs::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        #certifs::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+        }
+
+        #certifs::-webkit-scrollbar-thumb {
+            height: 5px;
+            background-color: #d5ac68;
+        }
+        #certifs::-webkit-scrollbar-thumb:hover {
+            background-color: #f1db9d;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body class="font-serif	overscroll-y-contain" style="background-color: #FAEDCD; padding: 0 10%;">
+    <header class="flex flex-row w-full justify-between text-pink-700 max-sm:flex-col text-center" style="padding: 5px; position: sticky; top: 0; z-index: 99; background-color: #FAEDCD;">
+        <p class="font-bold text-xl max-sm:my-1 flex items-center primaryColor">WIAM BISSI</p>
+        <ul class="flex flex-row justify-between text-white max-sm:flex-col max-lg:pl-5 text-center">
+            <li class="p-2 primaryColor tab-hovered"><button onclick="scrollToDiv('home')">Home</a></li>
+            <li class="p-2 primaryColor tab-hovered"><button onclick="scrollToDiv('aboutMe')">About Me</button></li>
+            <li class="p-2 primaryColor tab-hovered"><button onclick="scrollToDiv('portfolio')">Portfolio</a></li>
+            <li class="p-2 primaryColor tab-hovered"><button onclick="scrollToDiv('certif')">Certificate</a></li>
+            <li class="p-2 primaryColor tab-hovered"><button onclick="scrollToDiv('badge')">Badge</a></li>
+            <li class="p-2 primaryColor tab-hovered"><button onclick="scrollToDiv('exp')">Experience</a></li>
+            <li class="p-2 primaryColor tab-hovered"><button onclick="scrollToDiv('contact')">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="flex flex-col items-start justify-center mt-8 primaryColor" style="min-height: 90vh;" id="home">
+        <p class="text-3xl">I'm a</p>
+        <h1 class="text-8xl uppercase">Full-Stack <br> Developer</h1>
+        <button class="my-3 self-start px-8 py-4 rounded-md text-lg font-bold shadow hover:bg-lime-800 hover:bg-opacity-50 hover:text-white" style="background-color: #E9EDC9; color: #40513B;">Previous Projects</button>
+    </div>
+
+    <div class="flex items-center" id="aboutMe">
+        <div class="w-1/2 flex justify-end pr-36 relative">
+            <div class="aboutme-img-border absolute"></div>
+            <img src="../images/myImage.jpeg" alt="" class="h-96">
+        </div>
+        <div class="w-1/2 pr-12">
+            <h2 class="font-bold text-3xl max-sm:my-1 flex items-center mb-4 uppercase primaryColor">About Me</h2>
+            <p>Young girl freshly graduated as a technician specializing in IT development, passionate about the IT field, I am preparing my professional university degree in continuing education, and I am looking to continue my career in the field of development. Young girl freshly graduated as a technician specializing in IT development, passionate about the IT field, I am preparing my professional university degree in continuing education, and I am looking to continue my career in the field of development.</p>
+            <button class="mr-5 my-3 self-start px-8 py-4 rounded-md text-lg font-bold shadow hover:bg-lime-800 hover:bg-opacity-50 hover:text-white" style="background-color: #E9EDC9; color: #40513B;">Hire Me</button>
+            <button class="my-3 self-start px-8 py-4 rounded-md text-lg font-bold shadow hover:bg-lime-800 hover:bg-opacity-50 hover:text-white" style="background-color: #E9EDC9; color: #40513B;">Resume</button>
+        </div>
+    </div>
+
+    <div class="flex flex-col justify-center items-center" style="min-height: 50vh;" id="portfolio">
+        <h2 class="font-bold text-3xl max-sm:my-1 flex items-center mb-4 uppercase primaryColor">Portfolio</h2>
+        <div class="tab">
+            <button class="tablinks mr-12 hover:text-lime-800 hover:bg-opacity-30 hover:underline" onclick="openCity(event, 'Mobile')" id="defaultOpen">Mobile App</button>
+            <button class="tablinks mr-12 hover:text-lime-800 hover:bg-opacity-30 hover:underline" onclick="openCity(event, 'Website')">Website</button>
+            <button class="tablinks mr-12 hover:text-lime-800 hover:bg-opacity-30 hover:underline" onclick="openCity(event, 'Design')">Design</button>
+          </div>
+          
+          <div id="Mobile" class="tabcontent mt-5">
+            <h3 class="uppercase" style="color: #AEC2B6;">Project 1</h3>
+            <p class="primaryColor">Clone of OpenClassRoom</p>
+          </div>
+          
+          <div id="Website" class="tabcontent mt-5">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p> 
+          </div>
+          
+          <div id="Design" class="tabcontent mt-5">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+          </div>
+    </div>
+
+        <div id="certif" style="min-height: 50vh;">
+            <h2 class="font-bold text-3xl max-sm:my-1 flex items-center justify-center mb-4 uppercase primaryColor">Certificates</h2>
+            <div id="certifs" class="flex" style="flex-wrap: nowrap; overflow-x: scroll;">
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/HTML.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/JAVA.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/PHP.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/SQL.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/angularAsp.net.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/cSaharp.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/SCRUM.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/SOLIDprinciples.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/DesignThinking.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/PHP_MYSQL.jpg" alt="certif">
+                </div>
+                <div class="w-1/4 px-3" style="flex-shrink: 0;">
+                    <img src="../images/SCRUM2.jpg" alt="certif">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col" style="min-height: 30vh;" id="badge">
+            <h2 class="font-bold text-3xl max-sm:my-1 flex items-center justify-center mb-4 uppercase primaryColor">Badges</h2>
+            <a href="https://www.credly.com/users/wiam-bissi/badges" class="flex justify-center" target="_blank">
+                <img class="px-3" src="../images/html-css.png" alt="">
+                <img class="px-3" src="../images/web-development.png" alt="">
+                <img class="px-3" src="../images/create-your-own-web-page.png" alt="">
+            </a>
+        </div>
+
+        <div id="contact" class="p-6" style="background-color: #E9EDC9; border-radius: 15px 15px 0 0; padding: 0 10%;">
+            <h2 class="font-bold text-3xl max-sm:my-1 flex items-center justify-center mb-4 uppercase primaryColor">Contact</h2>
+            <div>
+                <h2 class="text-xl" style="color: #94AF9F;">Drop Me a Message</h2>
+                <div class="primaryColor flex mt-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                  +212 6 93 09 95 01</div>
+                <div class="primaryColor flex mt-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+                  </svg>
+                   wiam.bissii@gmail.com</div>
+                <div class="primaryColor flex mt-3"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  Hay mohemmadi, Hay mourad BALOC 14 N 1</div>
+            </div>
+            <hr>
+            <div class="flex flex-col text-center">
+                <div class="flex justify-center">
+                    <a href="https://github.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 496 512" class="mr-5"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+                    <a href="https://www.linkedin.com/in/wiam-bissi/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512" class="mr-5"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+                </div>
+                <p class="mt-3 primaryColor">Copy Right 2023 © By Bissi Wiam All Rights Reserved</p>
+            </div>
+        </div>
+    
+    <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+
+
+        function scrollToDiv(id) {
+            console.log(id);
+            $('html, body').animate({
+                scrollTop: $("#" + id).offset().top - 120
+            }, 100);
+        }
+        </script>
+</body>
+</html>
